@@ -1,0 +1,6 @@
+{
+  "name": "Sugar Cascade: Match-3 Kingdom",
+  "description": "Juicy and addictive match-3 casual puzzle game featuring special candy combos, frosted obstacles, boosters, interactive levels, and synthesized audio FX.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

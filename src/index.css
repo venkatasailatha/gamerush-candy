@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+.font-candy {
+  font-family: 'Fredoka', cursive, 'Plus Jakarta Sans', sans-serif;
+}
+
+@keyframes candy-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes candy-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-4px) rotate(-2deg); }
+  40% { transform: translateX(4px) rotate(2deg); }
+  60% { transform: translateX(-3px) rotate(-1deg); }
+  80% { transform: translateX(3px) rotate(1deg); }
+}
+
+@keyframes float-up {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.85);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.15);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-35px) scale(1.05);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+}
+
+@keyframes disco-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-candy-pulse {
+  animation: candy-pulse 1.2s infinite ease-in-out;
+}
+
+.animate-candy-shake {
+  animation: candy-shake 0.4s ease-in-out;
+}
+
+.animate-float-up {
+  animation: float-up 1s forwards cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-disco-spin {
+  animation: disco-spin 6s linear infinite;
+}
+
+/* Prevent text selection and rubber-band dragging on mobile */
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}

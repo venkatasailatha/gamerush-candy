@@ -1,0 +1,172 @@
+import { LevelConfig, CandyColor } from '../types/game';
+
+const ALL_COLORS: CandyColor[] = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
+const FIVE_COLORS: CandyColor[] = ['red', 'orange', 'yellow', 'green', 'blue'];
+const FOUR_COLORS: CandyColor[] = ['red', 'yellow', 'green', 'blue'];
+
+export const LEVELS: LevelConfig[] = [
+  {
+    id: 1,
+    name: "Sugar Meadow",
+    title: "Sweet Beginnings",
+    theme: "Sunny Sugar Meadows",
+    moves: 22,
+    targetScore: 2500,
+    twoStarScore: 5000,
+    threeStarScore: 8000,
+    goals: {
+      scoreTarget: 2500,
+    },
+    colors: FOUR_COLORS,
+  },
+  {
+    id: 2,
+    name: "Jelly Glade",
+    title: "Frosted Tiles",
+    theme: "Frosted Glades",
+    moves: 22,
+    targetScore: 3500,
+    twoStarScore: 6500,
+    threeStarScore: 10000,
+    goals: {
+      clearFrosting: 16,
+    },
+    colors: FIVE_COLORS,
+    initialFrosting: [
+      { row: 2, col: 2 }, { row: 2, col: 3 }, { row: 2, col: 4 }, { row: 2, col: 5 },
+      { row: 3, col: 2 }, { row: 3, col: 3 }, { row: 3, col: 4 }, { row: 3, col: 5 },
+      { row: 4, col: 2 }, { row: 4, col: 3 }, { row: 4, col: 4 }, { row: 4, col: 5 },
+      { row: 5, col: 2 }, { row: 5, col: 3 }, { row: 5, col: 4 }, { row: 5, col: 5 },
+    ],
+  },
+  {
+    id: 3,
+    name: "Berry Orchard",
+    title: "Candy Collector",
+    theme: "Berry Springs",
+    moves: 20,
+    targetScore: 4000,
+    twoStarScore: 7500,
+    threeStarScore: 11000,
+    goals: {
+      collectCandies: {
+        red: 18,
+        blue: 18,
+      },
+    },
+    colors: FIVE_COLORS,
+  },
+  {
+    id: 4,
+    name: "Chocolate Cavern",
+    title: "Blocker Break",
+    theme: "Cocoa Caves",
+    moves: 22,
+    targetScore: 5000,
+    twoStarScore: 9000,
+    threeStarScore: 13000,
+    goals: {
+      clearChocolate: 12,
+    },
+    colors: FIVE_COLORS,
+    initialChocolate: [
+      { row: 3, col: 1 }, { row: 3, col: 2 }, { row: 3, col: 5 }, { row: 3, col: 6 },
+      { row: 4, col: 1 }, { row: 4, col: 2 }, { row: 4, col: 5 }, { row: 4, col: 6 },
+      { row: 5, col: 2 }, { row: 5, col: 3 }, { row: 5, col: 4 }, { row: 5, col: 5 },
+    ],
+  },
+  {
+    id: 5,
+    name: "Cherry Falls",
+    title: "Ingredient Drop",
+    theme: "Cherry Cascades",
+    moves: 24,
+    targetScore: 6000,
+    twoStarScore: 10000,
+    threeStarScore: 15000,
+    goals: {
+      bringIngredientsDown: 2,
+    },
+    colors: FIVE_COLORS,
+    initialIngredients: [
+      { row: 0, col: 2 },
+      { row: 0, col: 5 },
+    ],
+  },
+  {
+    id: 6,
+    name: "Glacier Summit",
+    title: "Double Frosting",
+    theme: "Vanilla Peaks",
+    moves: 24,
+    targetScore: 7000,
+    twoStarScore: 12000,
+    threeStarScore: 17000,
+    goals: {
+      clearFrosting: 20,
+    },
+    colors: ALL_COLORS,
+    initialDoubleFrosting: [
+      { row: 1, col: 2 }, { row: 1, col: 3 }, { row: 1, col: 4 }, { row: 1, col: 5 },
+      { row: 2, col: 1 }, { row: 2, col: 6 },
+      { row: 3, col: 1 }, { row: 3, col: 6 },
+      { row: 4, col: 1 }, { row: 4, col: 6 },
+      { row: 5, col: 1 }, { row: 5, col: 6 },
+      { row: 6, col: 2 }, { row: 6, col: 3 }, { row: 6, col: 4 }, { row: 6, col: 5 },
+      { row: 3, col: 3 }, { row: 3, col: 4 }, { row: 4, col: 3 }, { row: 4, col: 4 },
+    ],
+  },
+  {
+    id: 7,
+    name: "Star Sugar Palace",
+    title: "Rainbow Triple",
+    theme: "Caramel Citadel",
+    moves: 22,
+    targetScore: 8000,
+    twoStarScore: 14000,
+    threeStarScore: 20000,
+    goals: {
+      collectCandies: {
+        yellow: 20,
+        green: 20,
+        purple: 20,
+      },
+    },
+    colors: ALL_COLORS,
+    blockedCells: [
+      { row: 0, col: 0 }, { row: 0, col: 7 },
+      { row: 7, col: 0 }, { row: 7, col: 7 },
+    ],
+  },
+  {
+    id: 8,
+    name: "Grand Sugar Castle",
+    title: "Master Challenge",
+    theme: "Royal Confection",
+    moves: 26,
+    targetScore: 10000,
+    twoStarScore: 18000,
+    threeStarScore: 25000,
+    goals: {
+      clearFrosting: 16,
+      clearChocolate: 8,
+    },
+    colors: ALL_COLORS,
+    initialFrosting: [
+      { row: 1, col: 1 }, { row: 1, col: 6 },
+      { row: 2, col: 2 }, { row: 2, col: 5 },
+      { row: 5, col: 2 }, { row: 5, col: 5 },
+      { row: 6, col: 1 }, { row: 6, col: 6 },
+      { row: 3, col: 2 }, { row: 3, col: 5 },
+      { row: 4, col: 2 }, { row: 4, col: 5 },
+      { row: 2, col: 3 }, { row: 2, col: 4 },
+      { row: 5, col: 3 }, { row: 5, col: 4 },
+    ],
+    initialChocolate: [
+      { row: 3, col: 3 }, { row: 3, col: 4 },
+      { row: 4, col: 3 }, { row: 4, col: 4 },
+      { row: 0, col: 3 }, { row: 0, col: 4 },
+      { row: 7, col: 3 }, { row: 7, col: 4 },
+    ],
+  },
+];
